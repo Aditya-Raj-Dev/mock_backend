@@ -1,5 +1,5 @@
 const  mongoose = require("mongoose")
-
+mongoose.set('strictQuery', true)
 const ListSchema=mongoose.Schema({
     title:{type:String,required:true},
     quantity:{type:Number,required:true},

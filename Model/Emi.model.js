@@ -1,5 +1,5 @@
 const  mongoose = require("mongoose")
-
+mongoose.set('strictQuery', true)
 const EmiSchema=mongoose.Schema({
     email:{type:String,required:true},
     loan:{type:Number,required:true},
