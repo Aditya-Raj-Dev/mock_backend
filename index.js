@@ -24,5 +24,5 @@ app.listen(8080,async()=>{
     catch(e){
         console.log(e)
     }
-    console.log("server Started")
+    console.log("server Started backend")
 })
