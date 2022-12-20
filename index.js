@@ -2,6 +2,7 @@ const express =require("express")
 const connection = require("./database/db")
 const cors = require("cors")
 const JobsRouter = require("./Route/Jobs.route")
+const GameRouter=require("./Route/game.route")
 
 const app=express()
 
@@ -12,7 +13,9 @@ app.get("/",async(req,res)=>{
     res.send("welcome")
 })
 
-app.use("/jobs",JobsRouter)
+// app.use("/jobs",JobsRouter)
+app.use("/game",GameRouter)
+
 
 
 app.listen(8080,async()=>{
