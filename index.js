@@ -3,6 +3,7 @@ const connection = require("./database/db")
 const cors = require("cors")
 const JobsRouter = require("./Route/Jobs.route")
 const GameRouter=require("./Route/game.route")
+  const SignupRouter = require("./Route/signup.route")
 
 const app=express()
 
@@ -13,12 +14,12 @@ app.get("/",async(req,res)=>{
     res.send("welcome")
 })
 
-// app.use("/jobs",JobsRouter)
+  app.use("/ticket",SignupRouter)
 app.use("/game",GameRouter)
 
 
 
-app.listen(8080,async()=>{
+app.listen(8090,async()=>{
     try{
         await connection
         console.log("database connnected")
