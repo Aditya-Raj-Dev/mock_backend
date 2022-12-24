@@ -36,11 +36,17 @@ const Login= async (req,res)=>{
 }
 
 const Ticketcreate=async(req,res)=>{
-  const {category,title,message}=req.body;
+  const {category,title,message,email}=req.body;
   const data= await TicketModel.create({
-    category,title,message
+    category,title,message,email
   })
   res.send({"msg":"Ticket Created"})
 }
 
-module.exports={signup,Login,Ticketcreate}
+const showAllticket=async(req,res)=>{
+    const {email}= req.body
+    const data =await TicketModel.find({email})
+    res.send({"msg":data})
+}
+
+module.exports={signup,Login,Ticketcreate,showAllticket}
